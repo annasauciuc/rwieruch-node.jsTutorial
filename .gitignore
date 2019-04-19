@@ -1,0 +1,10 @@
+.env
+node_modules
+
+
+
+//Frontend -> Backend 1 -> Backend 2 -> Database
+
+// Frontend: Client of Backend 1
+// Backend 1: Server for Frontend, also Client of Backend 2
+// Backend 2: Server for Backend 1
