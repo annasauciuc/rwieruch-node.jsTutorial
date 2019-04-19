@@ -1,6 +1,7 @@
 import 'dotenv/config';
-import models from './models';
-import routes from './routes';
+
+import models, { connectDb } from '../models';
+import routes from '../routes';
 import cors from 'cors';
 import uuidv4 from 'uuid/v4';
 import bodyParser from 'body-parser';
@@ -25,7 +26,8 @@ app.use((req, res, next) => {
 });
 
 
-
-app.listen(process.env.PORT, () =>
-    console.log(`Example app listening on port ${process.env.PORT}!`),
-);
+connectDb().then(async() => {
+    app.listen(process.env.PORT, () =>
+        console.log(`Example app listening on port ${process.env.PORT}!`),
+    );
+});
