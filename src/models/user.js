@@ -6,7 +6,7 @@ const userSchema = new mongoose.Schema({
     unique: true,
   },
 });
-
+//finds a user by their an abstract “login” term, which is the username or email in the end, in the database
 userSchema.statics.findByLogin = async function(login) {
   let user = await this.findOne({
     username: login,
